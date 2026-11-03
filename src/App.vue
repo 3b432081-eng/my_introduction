@@ -1,6 +1,8 @@
 <script setup>
+
 import { ref } from 'vue'
 import ProjectCard from './components/ProjectCard.vue'
+import Common from './components/common.vue'
 
 const projects = [
   {
@@ -94,19 +96,15 @@ function submitForm() {
         </p>
 
         <div class="about-grid">
-          <div class="card">
-            <h3>我的故事</h3>
-            <p>
-              我喜歡研究新科技，也享受解決問題的過程。
-              對我來說，每一個專案都是一次學習與成長的機會。
-            </p>
-          </div>
-          <div class="card">
-            <h3>我的興趣</h3>
-            <p>
-              程式設計、網頁開發、音樂、看動漫，以及探索各種有趣的新事物。
-            </p>
-          </div>
+          <Common
+            title="我的故事"
+            content="我喜歡研究新科技，也享受解決問題的過程。對我來說，每一個專案都是一次學習與成長的機會。"
+          />
+
+          <Common
+            title="我的興趣"
+            content="程式設計、網頁開發、音樂、看動漫，以及探索各種有趣的新事物。"
+          />
         </div>
       </div>
     </section>
