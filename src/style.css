@@ -248,3 +248,162 @@ footer { text-align: center; color: var(--muted); padding: 30px 20px 44px; font-
   .container { width: min(100% - 28px, 1120px); }
   .contact-box { padding: 36px 18px; }
 }
+/* YouBike 即時車位 */
+.youbike-panel {
+  padding: 25px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.youbike-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.youbike-controls input,
+.youbike-controls select {
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.youbike-controls input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.youbike-controls button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.youbike-controls button:hover {
+  background: var(--primary-dark);
+}
+
+.youbike-controls button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.youbike-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.youbike-status {
+  margin: 15px 0;
+  color: var(--muted);
+}
+
+.youbike-status.error {
+  color: #dc2626;
+}
+
+.youbike-status.empty {
+  color: #b45309;
+}
+
+.youbike-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.youbike-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: white;
+}
+
+.youbike-card h3 {
+  margin-bottom: 8px;
+}
+
+.youbike-address {
+  min-height: 45px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.youbike-bike-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 文字靠左，數字靠右 */
+  gap: 12px;
+  margin: 18px 0;
+  padding: 12px;
+  background: #f2f7ff;
+  border-radius: 8px;
+}
+
+/* 可借車輛文字 */
+.youbike-bike-count span {
+  font-size: 20px;  /* 縮小字體 */
+  color: #000000;   /* 改為黑色 */
+}
+
+/* 後面的數字 */
+.youbike-bike-count strong {
+  font-size: 32px;  /* 保持原本大小 */
+  color: #16834a;   /* 保持原本顏色 */
+}
+
+/* 沒有車輛時，數字顯示紅色 */
+.youbike-bike-count strong.zero-bikes {
+  color: #e53935;
+}
+
+.youbike-bike-count.zero {
+  color: #dc2626;
+}
+
+.youbike-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.youbike-updated {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .youbike-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .youbike-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .youbike-controls {
+    flex-direction: column;
+  }
+
+  .youbike-controls input,
+  .youbike-controls select,
+  .youbike-controls button {
+    width: 100%;
+  }
+}
